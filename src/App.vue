@@ -41,9 +41,6 @@ $border-radius: 20px;
   place-items: center;
   background-color: #8383838d;
 }
-.calculator > div {
-  border: 1px solid #ededed;
-}
 .calculator{
   width:clamp(300px, 100%, 600px);
   height: 100%;
