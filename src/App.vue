@@ -37,16 +37,18 @@ $border-radius: 20px;
 .main-elements {
   width: 100vw;
   height: 100vh;
+  display: grid;
+  place-items: center;
   background-color: #8383838d;
 }
 .calculator > div {
   border: 1px solid #ededed;
 }
 .calculator{
-  width: 100%;
+  width:clamp(300px, 100%, 600px);
   height: 100%;
   display: grid;
-  padding: 10%;
+  padding: 5%;
 }
 .calculator-wrapper{
   display: grid;
