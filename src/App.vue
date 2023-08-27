@@ -3,15 +3,27 @@
       <div class="calculator">
         <div class="calculator-wrapper">
           <div class="output">
-        output
+        <Output/>
       </div>
       <div class="buttons">
-        buttons
+        <Buttons/>
       </div>
         </div>
     </div>
   </div>
 </template>
+
+<script lang="ts">
+import Output from "./views/Output/Output.vue";
+import Buttons from "./views/Buttons/Buttons.vue";
+export default {
+  name: "App",
+  components: {
+    Output,
+    Buttons,
+  },
+};
+</script>
 
 <style lang="scss">
 
@@ -35,7 +47,6 @@ $border-radius: 20px;
   height: 100%;
   display: grid;
   padding: 10%;
- 
 }
 .calculator-wrapper{
   display: grid;
