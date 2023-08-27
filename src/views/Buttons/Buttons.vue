@@ -1,5 +1,5 @@
 <template>
-    c
+    s
 </template>
 
 <script lang="ts">
