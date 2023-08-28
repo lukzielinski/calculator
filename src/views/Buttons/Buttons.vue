@@ -25,7 +25,7 @@
             <span class="button">+</span>
         </div>
         <div class="buttons-row">
-            <span class="button">0</span>
+            <span class="button zero">0</span>
             <span class="button">.</span>
             <span class="button">=</span>
         </div>
@@ -46,16 +46,21 @@
  .buttons-row{
     border: 1px solid red;
     display: grid;
-    justify-content: space-around;
-    align-items: center;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 25% 25% 25% 25%;
  }
  .button{
-    border: 1px solid red;
-    width: 100%;
-    height: 100%;
+    border: 1px solid rgb(9, 255, 0);
+    margin: 15px 15px 15px 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
  }
  .buttons-container > div {
-    border: 1px solid red;
+    border: 1px solid rgb(86, 255, 8);
  }
+.zero{
+    grid-column: span 2;
+    border: 1px solid rgb(255, 0, 0);
+}
 </style>
