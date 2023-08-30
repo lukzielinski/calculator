@@ -59,22 +59,22 @@
         cursor: pointer;
     }
     
-    &.orange {
-        background-color: #f59220;
-        background-image: linear-gradient(315deg, #f5d020 0%, #f53803 74%);
-    }
+    // &.orange {
+    //     background-color: #f59220;
+    //     background-image: linear-gradient(315deg, #f5d020 0%, #f53803 74%);
+    // }
     
-    &.dark {
-        background-color: #000000;
-        background-image: linear-gradient(315deg, #000000 0%, #5e5368 74%);
+    // &.dark {
+    //     background-color: #000000;
+    //     background-image: linear-gradient(315deg, #000000 0%, #5e5368 74%);
 
-    }
+    // }
     
-    &.gray {
-        background-color: #a399b2;
-        background-image: linear-gradient(147deg, #a399b2 0%, #4d4855 74%);
+    // &.gray {
+    //     background-color: #a399b2;
+    //     background-image: linear-gradient(147deg, #a399b2 0%, #4d4855 74%);
 
-    }
+    // }
 }
 .zero {
         grid-column: span 2;
