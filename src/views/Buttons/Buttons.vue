@@ -37,6 +37,7 @@
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 .buttons-container {
     height: 100%;
     display: grid;
@@ -49,32 +50,30 @@
 }
 
 .button {
-    margin: 15px;
+    width: 80px;
+    height: 80px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Black Ops One', cursive;
+    user-select: none;
 
     &:hover {
         cursor: pointer;
     }
     
-    // &.orange {
-    //     background-color: #f59220;
-    //     background-image: linear-gradient(315deg, #f5d020 0%, #f53803 74%);
-    // }
+    &.orange {
+        color: white;
+        font-size: 20px;
+        border: 1px solid gray;
+    }
     
-    // &.dark {
-    //     background-color: #000000;
-    //     background-image: linear-gradient(315deg, #000000 0%, #5e5368 74%);
-
-    // }
+    &.dark {
+    }
     
-    // &.gray {
-    //     background-color: #a399b2;
-    //     background-image: linear-gradient(147deg, #a399b2 0%, #4d4855 74%);
-
-    // }
+    &.gray {
+    }
 }
 .zero {
         grid-column: span 2;
