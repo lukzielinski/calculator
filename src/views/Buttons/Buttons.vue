@@ -46,7 +46,10 @@
 
 .buttons-row {
     display: grid;
+    align-items: center;
+    justify-content: space-around   ;
     grid-template-columns: repeat(4, 25%);
+    border: 1px solid red;
 }
 
 .button {
@@ -70,9 +73,11 @@
     }
     
     &.dark {
+        border: 1px solid gray;
     }
     
     &.gray {
+        border: 1px solid gray;
     }
 }
 .zero {
