@@ -53,7 +53,7 @@
 }
 
 .button {
-    width: 80px;
+    // width: 80px;
     height: 80px;
     border-radius: 10px;
     display: flex;
