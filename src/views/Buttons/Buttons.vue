@@ -54,13 +54,13 @@
 
 .button {
     // width: 80px;
-    height: 80px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Black Ops One', cursive;
-    user-select: none;
+    // height: 80px;
+    // border-radius: 10px;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // font-family: 'Black Ops One', cursive;
+    // user-select: none;
 
     &:hover {
         cursor: pointer;
