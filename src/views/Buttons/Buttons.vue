@@ -1,39 +1,108 @@
 <template>
     <div class="buttons-container">
-        <div class="buttons-row">
-            <span class="button gray">C</span>
-            <span class="button gray">+/-</span>
-            <span class="button gray">%</span>
-            <span class="button orange">/</span>
-        </div>
-        <div class="buttons-row">
-            <span class="button dark">7</span>
-            <span class="button dark">8</span>
-            <span class="button dark">9</span>
-            <span class="button orange">*</span>
-        </div>
-        <div class="buttons-row">
-            <span class="button dark">4</span>
-            <span class="button dark">5</span>
-            <span class="button dark">6</span>
-            <span class="button orange">-</span>
-        </div>
-        <div class="buttons-row">
-            <span class="button dark">1</span>
-            <span class="button dark">2</span>
-            <span class="button dark">3</span>
-            <span class="button orange">+</span>
-        </div>
-        <div class="buttons-row">
-            <span class="button zero dark">0</span>
-            <span class="button dark">.</span>
-            <span class="button orange">=</span>
-        </div>
+      <div class="buttons-row">
+        <span class="button gray" @click="clearInput">C</span>
+        <span class="button gray" @click="appendOperator('+')">+/-</span>
+        <span class="button gray">%</span>
+        <span class="button orange" @click="appendOperator('/')">/</span>
+      </div>
+      <div class="buttons-row">
+        <span class="button dark" @click="appendNumber('7')">7</span>
+        <span class="button dark" @click="appendNumber('8')">8</span>
+        <span class="button dark" @click="appendNumber('9')">9</span>
+        <span class="button orange" @click="appendOperator('*')">*</span>
+      </div>
+      <div class="buttons-row">
+        <span class="button dark" @click="appendNumber('4')">4</span>
+        <span class="button dark" @click="appendNumber('5')">5</span>
+        <span class="button dark" @click="appendNumber('6')">6</span>
+        <span class="button orange" @click="appendOperator('-')">-</span>
+      </div>
+      <div class="buttons-row">
+        <span class="button dark" @click="appendNumber('1')">1</span>
+        <span class="button dark" @click="appendNumber('2')">2</span>
+        <span class="button dark" @click="appendNumber('3')">3</span>
+        <span class="button orange" @click="appendOperator('+')">+</span>
+      </div>
+      <div class="buttons-row">
+        <span class="button zero dark" @click="appendNumber('0')">0</span>
+        <span class="button dark" @click="appendNumber('.')">.</span>
+        <span class="button orange" @click="calculate">=</span>
+      </div>
     </div>
-</template>
+  </template>
 
 <script lang="ts">
-    
+
+import { ref, onMounted } from 'vue';
+
+export default {
+  setup() {
+    const currentInput = ref('');
+    const operator = ref('');
+    const previousInput = ref('');
+
+    const appendNumber = (number: string) => {
+      currentInput.value += number;
+    };
+
+    const appendOperator = (op: string) => {
+      operator.value = op;
+      previousInput.value = currentInput.value;
+      currentInput.value = '';
+    };
+
+    const calculate = () => {
+      let result: number;
+      const num1 = parseFloat(previousInput.value);
+      const num2 = parseFloat(currentInput.value);
+
+      switch (operator.value) {
+        case '+':
+          result = num1 + num2;
+          break;
+        case '-':
+          result = num1 - num2;
+          break;
+        case '*':
+          result = num1 * num2;
+          break;
+        case '/':
+          if (num2 !== 0) {
+            result = num1 / num2;
+          } else {
+            result = NaN; // Division by zero
+          }
+          break;
+        default:
+          result = NaN; // Invalid operator
+      }
+
+      currentInput.value = result.toString();
+      console.log(result)
+      operator.value = '';
+        previousInput.value = '';
+    };
+
+    const clearInput = () => {
+      currentInput.value = '';
+      operator.value = '';
+      previousInput.value = '';
+    };
+
+    onMounted(() => {
+      console.log('mounted');
+    });
+
+    return {
+      currentInput,
+      appendNumber,
+      appendOperator,
+      calculate,
+      clearInput,
+    };
+  },
+};
 </script>
 
 <style lang="scss">
@@ -93,6 +162,5 @@
 }
 .zero {
         grid-column: span 2;
-        border-color: rgb(255, 0, 0);
     }
 </style>
