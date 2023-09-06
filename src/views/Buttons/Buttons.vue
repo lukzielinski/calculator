@@ -79,7 +79,6 @@ export default {
       }
 
       currentInput.value = result.toString();
-      console.log(result)
       operator.value = '';
         previousInput.value = '';
     };
