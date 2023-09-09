@@ -136,9 +136,9 @@ export default {
         margin: 0px 25px 0px 25px;
     }
 
-    // &:hover {
-    //     cursor: pointer;
-    // }
+    &:hover {
+        cursor: pointer;
+    }
 
     &:active{
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
