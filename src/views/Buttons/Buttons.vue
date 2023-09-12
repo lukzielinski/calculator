@@ -145,19 +145,19 @@ export default {
         color: rgb(218, 218, 218);
     }
     
-    &.orange {
-        background-color: #db7704;
-    }
+    // &.orange {
+    //     background-color: #db7704;
+    // }
     
-    &.dark {
+    // &.dark {
 
-        background-color:#02485a ;
+    //     background-color:#02485a ;
         
-    }
+    // }
     
-    &.gray {
-        background-color: #1a86a1;
-    }
+    // &.gray {
+    //     background-color: #1a86a1;
+    // }
 }
 .zero {
         grid-column: span 2;
